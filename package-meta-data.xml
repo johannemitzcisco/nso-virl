@@ -1,0 +1,17 @@
+<ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
+  <name>nso-virl</name>
+  <package-version>1.0</package-version>
+  <description>Generated Python package</description>
+  <ncs-min-version>4.7</ncs-min-version>
+  <required-package>
+    <name>nso-py-lib</name>
+    <min-version>1.0</min-version>
+  </required-package>
+
+  <component>
+    <name>main</name>
+    <application>
+      <python-class-name>nso_virl.main.Main</python-class-name>
+    </application>
+  </component>
+</ncs-package>

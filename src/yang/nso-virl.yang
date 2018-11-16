@@ -1,0 +1,65 @@
+module nso-virl {
+
+  namespace "http://example.com/nso-virl";
+  prefix nso-virl;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  description
+    "Bla bla...";
+
+  revision 2016-01-01 {
+    description
+      "Initial revision.";
+  }
+
+  container virl {
+    tailf:action LoadVIRLDevicesFromFile {
+      tailf:actionpoint load-virl-file-devices;
+      input {
+        leaf virl-filename {
+          type string;
+        }
+        leaf xslt-filename {
+          type string;
+          default "/Users/jnemitz/projects/jupyter/VIRL-DTP/VirlToNSODTP.xslt";
+        }
+      }
+      output {
+        leaf result {
+          type string;
+        }
+      }
+    }
+    tailf:action LoadVIRLDevicesFromSimulation {
+      tailf:actionpoint load-virl-sim-devices;
+      input {
+        leaf virl-server-ip-address {
+          type string;
+        }
+        leaf username {
+          type string;
+        }
+        leaf password {
+          type string;
+        }
+        leaf simulation-id {
+          type string;
+        }
+      }
+      output {
+        leaf result {
+          type string;
+        }
+      }
+    }
+  }
+}
